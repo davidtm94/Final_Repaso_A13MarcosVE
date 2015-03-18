@@ -7,5 +7,7 @@
     <string name="name">Name</string>
     <string name="phone">Phone</string>
     <string name="toastPhone">You must enter a number phone!</string>
+    <string name="title_activity_salary">Salary</string>
+    <string name="title_activity_video">Video</string>
 
 </resources>

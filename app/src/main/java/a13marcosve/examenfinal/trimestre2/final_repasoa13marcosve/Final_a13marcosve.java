@@ -50,7 +50,15 @@ public class Final_a13marcosve extends Activity {
             startActivity(chamada);
         }else
             Toast.makeText(getBaseContext(),getString(R.string.toastPhone),Toast.LENGTH_SHORT).show();
-
-
+    }
+    //ACTIVITY VIDEO
+    public void video(View view){
+        Intent video = new Intent(this,Video.class);
+        startActivity(video);
+    }
+    //SALARY
+    public void salario(View view){
+        Intent salary = new Intent(this,Salary.class);
+        startActivity(salary);
     }
 }

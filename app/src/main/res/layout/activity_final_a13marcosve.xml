@@ -37,7 +37,8 @@
         android:id="@+id/camera"
         android:layout_marginTop="32dp"
         android:layout_below="@+id/salary"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="video"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -45,7 +46,8 @@
         android:text="Salary"
         android:id="@+id/salary"
         android:layout_centerVertical="true"
-        android:layout_alignStart="@+id/call" />
+        android:layout_alignStart="@+id/call"
+        android:onClick="salario"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -53,5 +55,6 @@
         android:text="Audio"
         android:id="@+id/audio"
         android:layout_below="@+id/camera"
-        android:layout_alignStart="@+id/salary" />
+        android:layout_alignStart="@+id/salary"
+        />
 </RelativeLayout>
