@@ -86,34 +86,30 @@ public class Video extends Activity {
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == REQUEST_VIDEO_CAPTURE) {
-            if (resultCode == RESULT_OK) {
-                if (data == null) {
-                    Toast.makeText(getApplicationContext(),
-                            "NON HAI IMAXE/VIDEO A GARDAR", Toast.LENGTH_LONG)
-                            .show();
-                    return;
-                }
-
-                ruta = getExternalFilesDir(Environment.DIRECTORY_MOVIES);
-                arquivo = new File(ruta, "video" + random + ".mp4");
-
-                if (!arquivo.exists())
-                    return; // Non hai video
-
-                android.widget.MediaController media = new android.widget.MediaController(
-                        this);
-
-                VideoView vidview = (VideoView) findViewById(R.id.videoView);
-                vidview.setVideoURI(Uri.fromFile(arquivo));
-                vidview.setMediaController(media);
-                vidview.start();
-
-                Toast.makeText(this,
-                        "Video gardado en " + arquivo.getAbsolutePath(),
-                        Toast.LENGTH_SHORT).show();
-
+        if (requestCode == REQUEST_VIDEO_CAPTURE && resultCode == RESULT_OK) {
+            if (data == null) {
+                Toast.makeText(getApplicationContext(),
+                        "NON HAI IMAXE/VIDEO A GARDAR", Toast.LENGTH_LONG)
+                        .show();
+                return;
             }
+
+            ruta = getExternalFilesDir(Environment.DIRECTORY_MOVIES);
+            arquivo = new File(ruta, "video" + random + ".mp4");
+
+            android.widget.MediaController media = new android.widget.MediaController(
+                    this);
+
+            VideoView vidview = (VideoView) findViewById(R.id.videoView);
+            vidview.setVideoURI(Uri.fromFile(arquivo));
+            vidview.setMediaController(media);
+            vidview.start();
+
+            Toast.makeText(this,
+                    "Video gardado en " + arquivo.getAbsolutePath(),
+                    Toast.LENGTH_SHORT).show();
+
         }
     }
 }
+
